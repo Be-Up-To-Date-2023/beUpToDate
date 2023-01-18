@@ -1,0 +1,39 @@
+$primary: #3ea5db;
+$primary_dark: #3288b1;
+$secondary: #ffc902;
+$success: #3baa28;
+$danger: #e71616;
+$light: #d2d7de;
+$dark: #1b272d;
+
+$pallete: (
+  "primary": $primary,
+  "primary_dark": $primary_dark,
+  "secondary": $secondary,
+  "success": $success,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+@each $colorName, $colorCode in $pallete {
+  .text-#{$colorName} {
+    color: $colorCode;
+  }
+  .backgr-#{$colorName} {
+    background-color: $colorCode;
+  }
+  .border-#{$colorName} {
+    border: $colorCode;
+  }
+}
+
+:root {
+  --primary-color: #{$primary};
+  --primary-color-dark: #{$primary_dark};
+  --secondary-color: #{$secondary};
+  --light-color: #{$light};
+  --dark-color: #{$dark};
+  --danger-color: #{$danger};
+  --success-color: #{$success};
+}

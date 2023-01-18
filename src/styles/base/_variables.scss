@@ -1,0 +1,10 @@
+// box shadows
+$box-shadow1: 1px 6px 30px rgba(62, 165, 219, 0.3);
+$box-shadow2: 1px 10px 30px 3px rgba(62, 165, 219, 0.2);
+$box-shadow3: 1px 6px 18px 10px rgba(37, 89, 141, 0.2);
+
+:root {
+  --box-shadow1: #{$box-shadow1};
+  --box-shadow2: #{$box-shadow2};
+  --box-shadow3: #{$box-shadow3};
+}

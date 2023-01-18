@@ -1,0 +1,27 @@
+// @font-face {
+//   font-family: IRANSans;
+//   font-style: normal;
+//   font-weight: normal;
+//   src: url("../fonts/eot/IRANSansWeb(FaNum).eot");
+//   src: url("../fonts/eot/IRANSansWeb(FaNum).eot?#iefix")
+//       format("embedded-opentype"),
+//     /* IE6-8 */ url("../fonts/woff2/IRANSansWeb(FaNum).woff2") format("woff2"),
+//     /* FF39+,Chrome36+, Opera24+*/ url("../fonts/woff/IRANSansWeb(FaNum).woff")
+//       format("woff"),
+//     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//       url("../fonts/ttf/IRANSansWeb(FaNum).ttf") format("truetype");
+// }
+
+
+$font-size-base: 1rem;
+$font-size-xs: $font-size-base * 0.75; // 12px
+$font-size-sm: $font-size-base * 0.875; // 14px
+$font-size-md: $font-size-base * 1.125; // 18px
+
+
+:root {
+    --font-size-base: #{$font-size-base};
+    --font-size-xs: #{$font-size-xs}; // 12px
+    --font-size-sm: #{$font-size-sm}; // 14px
+    --font-size-md: #{$font-size-md}; // 18px
+  }
