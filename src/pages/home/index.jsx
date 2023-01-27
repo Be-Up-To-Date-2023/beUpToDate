@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "react-bootstrap-icons";
 
-import { ROUTES_SEARCH_PAGE } from "../../routes/routes";
+import { ROUTES_SEARCH_PAGE, ROUTES_LOGIN_PAGE,ROUTES_HOOKS } from "../../routes/routes";
 
 import ButtonComponent from "../../components/buttons/buttonComponent";
 import HeaderComponent from "../../components/header/headerComponent";
@@ -11,10 +11,12 @@ import { StyledParagraph } from "./styledHomePage";
 const HomePage = () => {
   let navigate = useNavigate();
   const [background, setBackground] = useState(false);
+
   return (
     <div>
       <HeaderComponent />
       <h1 className="fs-1 text-center text-primary_dark"> HomePage</h1>
+      {}
       <ButtonComponent
         variant="warning"
         className="mt-5"
@@ -25,6 +27,26 @@ const HomePage = () => {
         go to search page
         <ArrowRight color="black" size={20} className="mx-2" />
       </ButtonComponent>
+      <ButtonComponent
+        variant="warning"
+        className="mt-5"
+        handleClick={() => {
+          navigate(`${ROUTES_LOGIN_PAGE}`);
+        }}
+      >
+        go to login page
+        <ArrowRight color="black" size={20} className="mx-2" />
+      </ButtonComponent>
+      <ButtonComponent
+        variant="warning"
+        className="mt-5"
+        handleClick={() => {
+          navigate(`${ROUTES_HOOKS}`);
+        }}
+      >
+        go to Hooks
+        <ArrowRight color="black" size={20} className="mx-2" />
+      </ButtonComponent>F
       <StyledParagraph $setBackground={background}>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere dolores
         voluptatibus nisi necessitatibus deserunt incidunt dicta aspernatur
