@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import GoHomeButton from "./buttons/goHomeButton";
 
 const Hooks = () => {
   const [data, setData] = useState(0);
+  const [inputData, setInputData] = useState("hello");
 
   useEffect(() => {
     console.log("!فقط یکبار اجرا میشم ،از همون لحظه ای که به دنیا بیام");
@@ -15,12 +15,14 @@ const Hooks = () => {
   }, [data]);
 
   useEffect(() => {
+    console.log("همین الان رندر شدم پس اجرا میشم😐");
+  });
+
+  useEffect(() => {
     return () => {
-        console.log(
-            " موقع خداحافظی اجرا میشم 😭"
-          );
-          alert("بازم به ما سر بزن")
-    }
+      console.log("موقع خداحافظی اجرا میشم 😭");
+      alert("بازم به این کامپوننت سر بزن");
+    };
   }, []);
 
   return (
@@ -29,10 +31,13 @@ const Hooks = () => {
         className="btn btn-primary mx-auto"
         onClick={() => setData((data) => data + 1)}
       >
-        click here to change data!
+        data تغییر مقدار
       </button>
-      <p className="text-center mt-5">data : {data}</p>
-      <GoHomeButton/>
+      <input
+        value={inputData}
+        onChange={(e) => setInputData(e.target.value)}
+        className="useEffect-input"
+      />
     </div>
   );
 };
