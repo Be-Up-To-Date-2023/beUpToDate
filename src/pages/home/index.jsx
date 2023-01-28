@@ -1,20 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "react-bootstrap-icons";
+
+import { ROUTES_SEARCH_PAGE, ROUTES_LOGIN_PAGE } from "../../routes/routes";
+
+import ButtonComponent from "../../components/buttons/buttonComponent";
+import HeaderComponent from "../../components/header/headerComponent";
+import { StyledParagraph } from "./styledHomePage";
 
 const HomePage = () => {
+  let navigate = useNavigate();
+  const [background, setBackground] = useState(false);
+
   return (
-    <div className="about-hooks" dir="rtl">
-      <h1 className="fs-1 text-center text-primary_dark"> هوک ها چی هستن ؟🤔</h1>
-      <h3 className="text-center my-4">توابعی  در  function component  ها برای مدیریت چرخه حیات هر کامپوننت</h3>
-      <ul>
-        🟣ویژگی ظاهری :
-        <li>نام اونا با use شروع میشه</li>
-        <li>تابع هستن</li>
-      </ul>
-      <ul>
-        🟣روش درست مصرف :
-        <li>در بالاترین سطح کد استفاده شوند ، در حلقه ها یا توابع تو در تو نباید استفاده شوند</li>
-        <li>فقط در function component ها قابل استفاده اندّ </li>
-      </ul>
+    <div>
+      <HeaderComponent />
+      <h1 className="fs-1 text-center text-primary_dark"> HomePage</h1>
+      {}
+      <ButtonComponent
+        variant="warning"
+        className="mt-5"
+        handleClick={() => {
+          navigate(`${ROUTES_SEARCH_PAGE}`);
+        }}
+      >
+        go to search page
+        <ArrowRight color="black" size={20} className="mx-2" />
+      </ButtonComponent>
+      <ButtonComponent
+        variant="warning"
+        className="mt-5"
+        handleClick={() => {
+          navigate(`${ROUTES_LOGIN_PAGE}`);
+        }}
+      >
+        go to login page
+        <ArrowRight color="black" size={20} className="mx-2" />
+      </ButtonComponent>
+      <StyledParagraph $setBackground={background}>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere dolores
+        voluptatibus nisi necessitatibus deserunt incidunt dicta aspernatur
+        perspiciatis enim quia nemo totam, impedit quo consectetur magni sit
+        tempora labore neque.
+      </StyledParagraph>
+      <ButtonComponent
+        className="mt-5 backgr-dark border-danger"
+        handleClick={() => setBackground((background) => !background)}
+      >
+        toggle paragraph background
+      </ButtonComponent>
     </div>
   );
 };
