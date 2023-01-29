@@ -10,7 +10,7 @@ const Hooks = () => {
 
   useEffect(() => {
     console.log(
-      "همون لحظه ای که به دنیا بیام ، تا هر وقت که کلیک کنی اجرا میشم"
+      `تولد مقدار ${data}🎉`
     );
   }, [data]);
 
@@ -20,10 +20,9 @@ const Hooks = () => {
 
   useEffect(() => {
     return () => {
-      console.log("موقع خداحافظی اجرا میشم 😭");
-      alert("بازم به این کامپوننت سر بزن");
+      console.log(`مرگ مقدار ${data}😭`);
     };
-  }, []);
+  }, [data]);
 
   return (
     <div className="container d-flex flex-column mt-5">
